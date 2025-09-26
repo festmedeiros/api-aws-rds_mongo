@@ -11,6 +11,8 @@ app.use(cors({
     allowedHeaders: '*'
 }));
 
+app.use(express.json());
+
 //swagger
 const swaggerDocs = require('./swagger');
 //S3
@@ -348,7 +350,7 @@ mongoose.connect(process.env.MONGO_URI, {
     .catch(err => console.log('Erro ao logar mongodb' + err, null, err));
 
 const UserSchema = new mongoose.Schema({
-    nome: String,
+    name: String,
     email: String
 });
 
@@ -463,7 +465,7 @@ app.post('/usuarios', async (req, res) => {
  *                 properties:
  *                   _id:
  *                     type: string
- *                   nome:
+ *                   name:
  *                     type: string
  *                   email:
  *                     type: string
@@ -505,7 +507,7 @@ app.get('/usuarios', async (req, res) => {
  *               properties:
  *                 _id:
  *                   type: string
- *                 nome:
+ *                 name:
  *                   type: string
  *                 email:
  *                   type: string
@@ -548,7 +550,7 @@ app.get('/usuarios/:id', async (req, res) => {
  *           schema:
  *             type: object
  *             properties:
- *               nome:
+ *               name:
  *                 type: string
  *               email:
  *                 type: string
@@ -562,7 +564,7 @@ app.get('/usuarios/:id', async (req, res) => {
  *               properties:
  *                 _id:
  *                   type: string
- *                 nome:
+ *                 name:
  *                   type: string
  *                 email:
  *                   type: string
@@ -607,7 +609,7 @@ app.put('/usuarios/:id', async (req, res) => {
  *               properties:
  *                 _id:
  *                   type: string
- *                 nome:
+ *                 name:
  *                   type: string
  *                 email:
  *                   type: string
