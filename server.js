@@ -155,6 +155,8 @@ app.delete('/buckets/:bucketName/file/:fileName', async (req, res) => {
  * /init-db:
  *   post:
  *     summary: Cria o banco de dados e a tabela produto
+ *     tags: 
+ *       - MySql
  *     responses:
  *       200:
  *         description: Banco de dados e tabela criados com sucesso
@@ -180,6 +182,8 @@ app.post('/init-db', async (req, res) => {
    * /produtos:
    *   get:
    *     summary: Lista todos os produtos
+   *     tags: 
+   *       - MySql
    *     responses:
    *       200:
    *         description: Lista de produtos
@@ -199,6 +203,8 @@ app.post('/init-db', async (req, res) => {
    * /produtos/{id}:
    *   get:
    *     summary: Busca um produto pelo ID
+   *     tags: 
+   *       - MySql
    *     parameters:
    *       - in: path
    *         name: id
@@ -227,6 +233,8 @@ app.post('/init-db', async (req, res) => {
    * /produtos:
    *   post:
    *     summary: Cria um novo produto
+   *     tags: 
+   *       - MySql
    *     requestBody:
    *       required: true
    *       content:
@@ -267,6 +275,8 @@ app.post('/init-db', async (req, res) => {
    * /produtos/{id}:
    *   put:
    *     summary: Atualiza um produto
+   *     tags: 
+   *       - MySql
    *     parameters:
    *       - in: path
    *         name: id
@@ -316,6 +326,8 @@ app.post('/init-db', async (req, res) => {
    * /produtos/{id}:
    *   delete:
    *     summary: Deleta um produto
+   *     tags: 
+   *       - MySql
    *     parameters:
    *       - in: path
    *         name: id
